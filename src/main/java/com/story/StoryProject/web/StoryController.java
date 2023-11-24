@@ -25,4 +25,9 @@ public class StoryController {
 	public String changelog() {
 		return "changelog";
 	}
+	
+	@RequestMapping("/introduction")
+	public String intrudction() {
+		return "introduction";
+	}
 }
