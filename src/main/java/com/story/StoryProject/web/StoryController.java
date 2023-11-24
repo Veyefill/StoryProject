@@ -20,4 +20,9 @@ public class StoryController {
 	public String about() {
 		return "about";
 	}
+	
+	@RequestMapping("/changelog")
+	public String changelog() {
+		return "changelog";
+	}
 }

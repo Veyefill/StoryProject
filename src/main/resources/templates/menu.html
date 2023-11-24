@@ -6,10 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Main Menu</h1>
-	<p>Welcome to the main page for the text-based browser game
-		Land of Dead Gods</p>
-	<p>Please select one of the following options to continue</p>
+	<h1>Welcome to the Land of Dead Gods.</h1>
+	<p>Welcome to the main menu for the text-based browser game-
+		Land of Dead Gods.</p>
+	<p>Please select one of the following options to continue:</p>
 	<form th:action="@{/newgameguest}" method="post">
 		<input type="submit" value="Start new game as a Guest">
 	</form>
@@ -21,6 +21,9 @@
 	</form>
 	<form th:action="@{/about}" method="post">
 		<input type="submit" value="About">
+	</form>
+		<form th:action="@{/changelog}" method="post">
+		<input type="submit" value="Changelog">
 	</form>
 </body>
 </html>
