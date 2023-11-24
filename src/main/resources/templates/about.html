@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<title>About</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>About</h1>
+	<p>
+		Land of Dead Gods is a text-based, choose-your-own-adventure style
+		web-browser based game. <br> While the story takes some
+		inspirations from various media, the core of it is a completely
+		original story. <br> This game is mainly a school project,
+		however, I hope to work on it on-and-off and, hopefully, turn it into
+		a full game at some point.
+	</p>
+		<form th:action="@{/menu}" method="post">
+		<input type="submit" value="Go back to the main menu">
+	</form>
+</body>
+</html>
