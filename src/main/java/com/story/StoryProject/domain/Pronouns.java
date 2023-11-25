@@ -29,6 +29,14 @@ public class Pronouns {
 		this.pronouns = pronouns;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	} 
+	
 	public String getPronouns () {
 		return pronouns;
 	}

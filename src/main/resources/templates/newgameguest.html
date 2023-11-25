@@ -9,11 +9,11 @@
 	<h1>Are you sure?</h1>
 	<p>When you start a new game as a guest, your progress won't be saved.</p>
 	<p>If you'd like to register or already have an account, use the button below to go back to the main menu and use the "register" or "login" buttons.</p>
-		<form th:action="@{/menu}" method="post">
+		<form th:action="@{/menu}">
 		<input type="submit" value="Main menu">
 	</form>
 	<p>If you don't want your progress to be saved, use the button below to continue.</p>
-		<form th:action="@{/introduction}" method="post">
+		<form th:action="@{/introduction}">
 		<input type="submit" value="Continue">
 	</form>
 </body>

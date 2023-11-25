@@ -17,6 +17,7 @@ public class Race {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
+	private String description;
 	
 	@OneToMany(mappedBy = "race", cascade = CascadeType.ALL)
 	private List<Character> characters;
@@ -25,8 +26,9 @@ public class Race {
 
 	}
 
-	public Race(String name) {
+	public Race(String name, String description) {
 		this.name = name;
+		this.description = description;
 	}
 
 	// Id
@@ -45,5 +47,13 @@ public class Race {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription (String description) {
+		this.description = description;
 	}
 }

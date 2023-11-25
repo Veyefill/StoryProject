@@ -34,10 +34,10 @@ public class StoryProjectApplication {
 		return (args) -> {
 			
 			//Backgrounds
-			Background b0 = new Background("Default");
-			Background b1 = new Background("Prisoner");
-			Background b2 = new Background("Guard");
-			Background b3 = new Background("Adventurer");
+			Background b0 = new Background("Default", "The default preset.");
+			Background b1 = new Background("Prisoner", "You're a prisoner in the infamous Ravenrock prison. You've been here so long you don't even know what you did, but now's the time to escape.");
+			Background b2 = new Background("Guard", "You're a guard in the humble village of Orswen. While most days are calm, you can't help but notice black smoke approaching the city in the distance");
+			Background b3 = new Background("Adventurer", "You don't have a constant place of residence- you wander from kingdom to kingdom, from land to land, seeking adventure.");
 
 			backgroundRepository.save(b0);
 			backgroundRepository.save(b1);
@@ -45,46 +45,56 @@ public class StoryProjectApplication {
 			backgroundRepository.save(b3);
 
 			//EyeColor
+			EyeColor e0 = new EyeColor("Default");
 			EyeColor e1 = new EyeColor("Blue");
 			EyeColor e2 = new EyeColor("Green");
 			EyeColor e3 = new EyeColor("Brown");
 
+			eyeColorRepository.save(e0);
 			eyeColorRepository.save(e1);
 			eyeColorRepository.save(e2);
 			eyeColorRepository.save(e3);
 
 			//GenderExpression
+			GenderExpression g0 = new GenderExpression("Default");
 			GenderExpression g1 = new GenderExpression("Feminine");
 			GenderExpression g2 = new GenderExpression("Masculine");
 			GenderExpression g3 = new GenderExpression("Androgynous");
 
+			genderExpressionRepository.save(g0);
 			genderExpressionRepository.save(g1);
 			genderExpressionRepository.save(g2);
 			genderExpressionRepository.save(g3);
 			
 			//Hair Color
+			HairColor h0 = new HairColor("Default");
 			HairColor h1 = new HairColor("Brown");
 			HairColor h2 = new HairColor("Blonde");
 			HairColor h3 = new HairColor("Black");
 
+			hairColorRepository.save(h0);
 			hairColorRepository.save(h1);
 			hairColorRepository.save(h2);
 			hairColorRepository.save(h3);
 
 			//Pronouns
+			Pronouns p0 = new Pronouns("Default");
 			Pronouns p1 = new Pronouns("He/Him");
 			Pronouns p2 = new Pronouns("She/Her");
 			Pronouns p3 = new Pronouns("They/Them");
 
+			pronounsRepository.save(p0);
 			pronounsRepository.save(p1);
 			pronounsRepository.save(p2);
 			pronounsRepository.save(p3);
 
 			//Races
-			Race r1 = new Race("Orc");
-			Race r2 = new Race("Human");
-			Race r3 = new Race ("Elf");
+			Race r0 = new Race("Default", "The default preset.");
+			Race r1 = new Race("Orc", "Incredibly tall, brutish humanoid creatures. Most are incredibly tall and strong.");
+			Race r2 = new Race("Human", "Normal humans.");
+			Race r3 = new Race ("Elf", "Tall humanoids with pointed ears. They have a natural predisposition for being magic wielders.");
 			
+			raceRepository.save(r0);
 			raceRepository.save(r1);
 			raceRepository.save(r2);
 			raceRepository.save(r3);
