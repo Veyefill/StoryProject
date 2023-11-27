@@ -1,5 +1,7 @@
 package com.story.StoryProject.web;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,8 @@ import com.story.StoryProject.domain.Pronouns;
 import com.story.StoryProject.domain.PronounsRepository;
 import com.story.StoryProject.domain.Race;
 import com.story.StoryProject.domain.RaceRepository;
+import com.story.StoryProject.domain.ProgramUser;
+import com.story.StoryProject.domain.ProgramUserRepository;
 
 @Controller
 public class StoryController {
@@ -46,11 +50,14 @@ public class StoryController {
 
 	@Autowired
 	private RaceRepository raceRepository;
+	
+	@Autowired
+	private ProgramUserRepository programUserRepository;
 
 	public StoryController(BackgroundRepository backgroundRepository, CharacterRepository characterRepository,
 			EyeColorRepository eyeColorRepository, GenderExpressionRepository genderExpressionRepository,
 			HairColorRepository hairColorRepository, PronounsRepository pronounsRepository,
-			RaceRepository raceRepository) {
+			RaceRepository raceRepository, ProgramUserRepository userRepository) {
 		this.backgroundRepository = backgroundRepository;
 		this.characterRepository = characterRepository;
 		this.eyeColorRepository = eyeColorRepository;
@@ -105,8 +112,32 @@ public class StoryController {
 	}
 	
 	@PostMapping("/charCreated")
-	public String createCharacter(@ModelAttribute Character character) {
+	public String createCharacter(@ModelAttribute Character character, Principal principal) {
+		String username = principal.getName();
+		ProgramUser programUser = programUserRepository.findByUsername(username);
+		character.setProgramUser(programUser);
 		characterRepository.save(character);
-		return "redirect:/createdcharacter";
+		return "createdcharacter";
+	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/database")
+	public String showDatabase (Model model) {
+		Iterable<Character> characters = characterRepository.findAll();
+		model.addAttribute("characters", characters);
+		return "database";
+	}
+	
+	@GetMapping("/createdcharacter")
+	public String createdCharacter(Model model, Principal principal) {
+		String username = principal.getName();
+		ProgramUser owner = programUserRepository.findByUsername(username);
+		Iterable<Character> character = characterRepository.findByProgramUser(owner);
+		model.addAttribute("character", character);
+		return "createdcharacter";
 	}
 }

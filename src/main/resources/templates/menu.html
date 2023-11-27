@@ -18,18 +18,18 @@
 		however, I hope to work on it on-and-off and, hopefully, turn it into
 		a full game at some point.
 	</p>
-	<p id="spacing">Please select one of the following options to continue into the game:</p>
-	<form th:action="@{/newgameguest}">
-		<input type="submit" value="Start new game as a Guest">
-	</form>
-	<form th:action="@{/register}">
-		<input type="submit" value="Register">
-	</form>
-	<form th:action="@{/login}">
-		<input type="submit" value="Login">
+	<p id="spacing">Please select one of the following options:</p>
+	<form th:action="@{/introduction}">
+		<input type="submit" value="Start a New Game">
 	</form>
 		<form th:action="@{/changelog}">
 		<input type="submit" value="Changelog">
+	</form>
+		<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
+		<form th:action="@{/database}" method="get">
+		<input type="submit" value="Check for Errors" />
 	</form>
 </body>
 </html>

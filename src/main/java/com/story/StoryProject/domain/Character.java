@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +18,10 @@ public class Character {
 	private String firstName;
 	private String lastName;
 	private int age; // From 19 to 59
+	
+    @OneToOne
+    @JoinColumn(name = "user_id", unique = true)
+    private ProgramUser programUser;
 
 	@ManyToOne
 	@JoinColumn(name = "race_id")
@@ -158,6 +163,15 @@ public class Character {
 	
 	public void setBackground(Background background) {
 		this.background = background;
+	}
+	
+	//User
+	public ProgramUser getProgramUser() {
+		return programUser;
+	}
+	
+	public void setProgramUser(ProgramUser programUser) {
+		this.programUser = programUser;
 	}
 	
 }

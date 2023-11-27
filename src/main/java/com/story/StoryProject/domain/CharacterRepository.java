@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CharacterRepository extends CrudRepository<Character, Long> {
 	List<Character> findByLastName (String lastName);
+	List<Character> findByProgramUser (ProgramUser programUser);
 }

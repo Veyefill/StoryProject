@@ -1,0 +1,29 @@
+package com.story.StoryProject.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;	
+import org.springframework.stereotype.Service;
+
+import com.story.StoryProject.domain.ProgramUser;
+import com.story.StoryProject.domain.ProgramUserRepository;
+
+
+@Service
+	public class UserDetailServiceImpl implements UserDetailsService {
+		private final ProgramUserRepository repository;
+
+		@Autowired
+		public UserDetailServiceImpl(ProgramUserRepository programUserRepository) {
+			this.repository = programUserRepository;
+		}
+
+		@Override
+		public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+			ProgramUser curruser = repository.findByUsername(username);
+			UserDetails user = new org.springframework.security.core.userdetails.User(username,curruser.getPassword(), AuthorityUtils.createAuthorityList(curruser.getRole()));
+			return user;
+		}
+	}
