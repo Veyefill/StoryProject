@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>You forgot to save</h1>
+	<p>Looks like you forgot to save, you dummy</p>
+	<iframe width="560" height="315"
+		src="https://www.youtube.com/embed/qNRQmCUagrA?si=k-l5dTyA4FbZsvDk"
+		title="YouTube video player"></iframe>
+		
+	<p>Click here to start from the introduction:</p>
+	<form th:action="@{/introduction}">
+		<input type="submit" value="Start Over"/>
+	</form>
+</body>
+</html>

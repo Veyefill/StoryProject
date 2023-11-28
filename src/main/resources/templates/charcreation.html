@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/charactercreation.css}" />
 <head>
 <title>Land of Dead Gods</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -11,55 +13,56 @@
 	<h2>Race Information</h2>
 
 	<ul>
-		<li th:each="race : ${races}"><strong th:text="${race.name}"></strong>:
+		<li th:each="race : ${race}"><strong th:text="${race.name}"></strong>:
 			<span th:text="${race.description}"></span></li>
 	</ul>
-
+	<br>
 	<h2>Background Information</h2>
 	<ul>
-		<li th:each="background : ${backgrounds}"><strong
+		<li th:each="background : ${background}"><strong
 			th:text="${background.name}"></strong>: <span
 			th:text="${background.description}"></span></li>
 	</ul>
-
+	<br>
 	<h2>The Builder</h2>
 
-	<form th:action="@{/charCreated}" method="post"
+	<form th:action="@{/character/customiser}" method="post"
 		th:object="${characterthing}">
 		<label for="firstName">First Name:</label> <input type="text"
 			id="firstName" name="firstName" required /> <br> <label
 			for="lastName">Last Name:</label> <input type="text" id="lastName"
 			name="lastName" required /> <br> <label for="age">Age:</label>
 		<input type="text" id="age" name="age" required /> <br> <label
-			for="race">Race:</label> <select id="race" name="race"
-			onchange="updateRaceDescription()">
-			<option th:each="race : ${races}" th:value="${race.id}"
+			for="race">Race:</label> <select id="race" name="race">
+			<option th:each="race : ${race}" th:value="${race.id}"
 				th:text="${race.name}"></option>
 		</select><br> <label for="pronouns">Pronouns:</label> <select
 			id="pronouns" name="pronouns">
 			<option th:each="pronouns : ${pronouns}" th:value="${pronouns.id}"
 				th:text="${pronouns.pronouns}"></option>
 		</select><br> <label for="genderExpressions">Gender Expression:</label> <select
-			id="genderExpressions" name="genderExpressions">
-			<option th:each="genderExpressions : ${genderExpressions}"
-				th:value="${genderExpressions.id}"
-				th:text="${genderExpressions.gendexp}"></option>
-		</select><br> <label for="hairColors">Hair Color:</label> <select
-			id="hairColors" name="hairColors">
-			<option th:each="hairColors : ${hairColors}"
-				th:value="${hairColors.id}" th:text="${hairColors.color}"></option>
-		</select> <br> <label for="eyeColors">Eye Color:</label> <select
-			id="eyeColors" name="eyeColors">
-			<option th:each="eyeColors : ${eyeColors}" th:value="${eyeColors.id}"
-				th:text="${eyeColors.color}"></option>
+			id="genderExpression" name="genderExpression">
+			<option th:each="genderExpression : ${genderExpression}"
+				th:value="${genderExpression.id}"
+				th:text="${genderExpression.genderExpression}"></option>
+		</select><br> <label for="hairColor">Hair Color:</label> <select
+			id="hairColor" name="hairColor">
+			<option th:each="hairColor : ${hairColor}" th:value="${hairColor.id}"
+				th:text="${hairColor.color}"></option>
+		</select> <br> <label for="eyeColor">Eye Color:</label> <select
+			id="eyeColor" name="eyeColor">
+			<option th:each="eyeColor : ${eyeColor}" th:value="${eyeColor.id}"
+				th:text="${eyeColor.color}"></option>
 		</select> <br> <label for="height">Height:</label> <input type="text"
 			id="height" name="height" required /> <br> <label
-			for="backgrounds">Background:</label> <select id="backgrounds"
-			name="backgrounds">
-			<option th:each="backgrounds : ${backgrounds}"
-				th:value="${backgrounds.id}" th:text="${backgrounds.name}"></option>
-		</select> <br> <br>
-		<button type="submit">Submit</button>
+			for="background">Background:</label> <select id="background"
+			name="background">
+			<option th:each="background : ${background}"
+				th:value="${background.id}" th:text="${background.name}"></option>
+		</select> <br> <br> <input type="submit" value="Submit" />
+	</form>
+	<form th:action="@{/menu}">
+		<input type="submit" value="Main Menu">
 	</form>
 </body>
 </html>

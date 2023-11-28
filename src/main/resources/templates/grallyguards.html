@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Rallying the Guards</h1>
+	<p>
+		Deciding to be smart about this, you quickly walk to your friends and
+		tell them to begin rallying all the guards in the city.<br> It
+		takes some effort, though, after a few minutes, the full forceTho of
+		Orswen is gathered and ready for any sort of bandit attack<br>
+		Though, while the guards were rallying together, you had some free
+		time.
+	</p>
+	<p>What did you do?</p>
+	<form th:action="@{/end}">
+		<input type="submit" value="Went ahead to scount the warband" />
+	</form>
+	<br>
+	<form th:action="@{/end}">
+		<input type="submit" value="Helped prepare the defenses" />
+	</form>
+	<br>
+	<form th:action="@{/end}">
+		<input type="submit" value="Started to evacuate the village people" />
+	</form>
+	<br>
+	<form th:action="@{/save/grallyguards}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/charactercreation.css}" />
 <head>
 <title>Land of Dead Gods</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Your Character:</h1>
-	<strong>First Name</strong>
-	<p th:text=${character.firstName}></p>
+	<h1>Created Character</h1>
+	<strong>First Name: </strong>
+	<span th:text="${character.firstName}"></span>
+	<br>
+	<strong>Last Name: </strong>
+	<span th:text="${character.lastName}"></span>
+	<br>
+	<strong>Age: </strong>
+	<span th:text="${character.age}"></span>
+	<br>
+	<Strong>Race: </Strong>
+	<span th:text="${character.race.name}"></span>
+	<br>
+	<Strong>Pronouns: </Strong>
+	<span th:text="${character.pronouns.pronouns}"></span>
+	<br>
+	<Strong>Gender: </Strong>
+	<span th:text="${character.genderExpression.genderExpression}"></span>
+	<br>
+	<Strong>Hair Color: </Strong>
+	<span th:text="${character.hairColor.color}"></span>
+	<br>
+	<Strong>Eye Color: </Strong>
+	<span th:text="${character.eyeColor.color}"></span>
+	<br>
+	<Strong>Height: </Strong>
+	<span th:text="${character.height}"></span>
+	<br>
+	<Strong>Background: </Strong>
+	<span th:text="${character.background.name}"></span>
+	<br>
+	<h2>Is this your character?</h2>
+	<br>
+	<form th:action="@{/introduction}">
+		<input type="submit" value="Yes" />
+	</form>
+	<form th:action="@{/character/delete}" method="POST">
+		<input type="submit" value="No" />
+	</form>
+</body>
 </body>
 </html>

@@ -16,20 +16,20 @@ public class GenderExpression {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String gendexp; //Gender expression
-	
-	@OneToMany(mappedBy = "gendexp", cascade = CascadeType.ALL)
+	private String genderExpression; // Gender expression
+
+	@OneToMany(mappedBy = "genderExpression", cascade = CascadeType.ALL)
 	private List<Character> characters;
-	
+
 	public GenderExpression() {
-		
+
 	}
-	
-	public GenderExpression (String gendexp) {
-		this.gendexp = gendexp;
-		
+
+	public GenderExpression(String genderExpression) {
+		this.genderExpression = genderExpression;
+
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -37,12 +37,12 @@ public class GenderExpression {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	public String getGendexp () {
-		return gendexp;
+
+	public String getGenderExpression() {
+		return genderExpression;
 	}
-	
-	public void setGendexp (String gendexp) {
-		this.gendexp = gendexp;
+
+	public void setGenderExpression(String genderExpression) {
+		this.genderExpression = genderExpression;
 	}
 }

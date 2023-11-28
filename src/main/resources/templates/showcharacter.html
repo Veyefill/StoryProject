@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div th:if="${character.isPresent()}">
+    	<h1>Your Character</h1>
+        <strong>First Name: </strong><span th:text="${character.get().firstName}"></span>
+        <br>
+        <strong>Last Name: </strong><span th:text="${character.get().lastName}"></span>
+        <br>
+        <strong>Race: </strong><span th:text="${character.get().race.name}"></span>
+        <br>
+        <strong>Pronouns: </strong><span th:text="${character.get().pronouns.pronouns}"></span>
+        <br>
+        <strong>Gender Expression: </strong><span th:text="${character.get().genderExpression.genderExpression}"></span>
+        <br>
+        <strong>Hair Color: </strong> <span th:text="${character.get().hairColor.color}"></span>
+        <br>
+        <strong>Eye Color: </strong><span th:text="${character.get().eyeColor.color}"></span>
+        <br>
+        <strong>Background: </strong> <span th:text="${character.get().background.name}"></span>
+    </div>
+    <br>	
+	<form th:action=@{/menu}>
+		<input type="submit" value="Go back to the menu"/>
+	</form>
+	</body>
+</html>

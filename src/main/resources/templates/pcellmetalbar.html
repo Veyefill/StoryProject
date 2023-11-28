@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Using the Metal Bar</h1>
+	<p>
+		You get out of your bed and flip the mattress up. Reaching underneath,
+		you pull out the metal bar you'd hidden there prior. <br> Luckily
+		for you, the guards in this prison are exceptionally bad and fail to
+		notice prisoners smuggling things. <br> You walk up to the
+		metal-bar-door and wedge the pipe in it, pulling as hard as you can.
+		After a second or two, with a loud "CLUNK", the rusty door's lock
+		breaks and the door swings open.<br> The noise of the door
+		hitting the wall lets out a loud noise, alerting the guards as you can
+		hear sounds of confusion coming from the distance.
+	</p>
+	<p>What do you do?</p>
+	<form th:action="@{/end}" method="get">
+		<input type="submit" value="Run in the opposite direction" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Try to close the door and wedge it shut, making it look like it's still closed and locked" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit" value="Charge the guards with your metal bar" />
+	</form>
+	<br>
+	<form th:action="@{/save/pcellmetalbar}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

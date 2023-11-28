@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>The End</h1>
+	<p>
+		Thank you for playing, <span th:text="${programUser.getUsername()}"></span> !
+		While the code for Land of Dead Gods is finished, <br> the story
+		itself very much is not. Stay tuned for updates!
+	</p>
+	<form th:action="@{/menu}">
+		<input type="submit" value="Main Menu">
+	</form>
+</body>
+</html>

@@ -18,7 +18,7 @@ public class HairColor {
 	private Long id;
 	private String color;
 	
-	@OneToMany(mappedBy = "haircol", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "hairColor", cascade = CascadeType.ALL)
 	private List<Character> characters;
 	
 	public HairColor () {

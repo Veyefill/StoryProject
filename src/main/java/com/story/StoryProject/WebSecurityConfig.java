@@ -19,16 +19,13 @@ public class WebSecurityConfig {
 
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests(authorize -> authorize
-				.requestMatchers(request -> "/register".equals(request.getServletPath())
-                        || "/registration-success".equals(request.getServletPath())).permitAll()
-				.anyRequest().authenticated())
+		http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
 				.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
 				.formLogin(formlogin -> formlogin.loginPage("/login").defaultSuccessUrl("/menu", true).permitAll())
 				.logout(logout -> logout.permitAll());
 		return http.build();
 	}
-	
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());

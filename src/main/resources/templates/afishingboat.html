@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>The Fishing Boat</h1>
+	<p>
+		Upon considering your options, you decide to go for the cheapest one -
+		the fishing boat<br> Your "ship" is roughly large enough to fit
+		two people and, while not as big as a ship, <br> it's definitely
+		still bigger than just a normal boat. You walk up to it and see an
+		elderly man <br> bringing in some nets. He looks over at you and
+		shouts "<span th:text="${character.get().getFirstName}"></span>!"<br>
+	</p>
+	<p>
+		You get somewhat surprised, though, as you look at him more, you can
+		see that it's an old acquaintance <br> you met on one of your
+		trips to the Empire. If you recall correctly, his name was Darius. <br>
+	</p>
+	<p>What do you say to Darius?</p>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Long time no see, friend! How've you been?" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Darius! How's the business been going while I've been gone?" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Don't say anything and ignore the old man." />
+	</form>
+	<br>
+	<form th:action="@{/save/afishingboat}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

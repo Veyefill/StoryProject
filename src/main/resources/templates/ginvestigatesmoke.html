@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Investigating the Smoke</h1>
+	<p>
+		You begin to walk towards the smoke, deciding that it's a good move to
+		check what it is instead of jumping to conclusions. <br> As you
+		approach the smoke, you notice that it's rapidly getting closer to the
+		town. You climb over the hill and finally see it's source.
+	</p>
+	<p>The source - tons of flame conjurations. Creatures created from
+		fire and stone by fire mages. They melt the snow beneath their feet as
+		they approach the village</p>
+	<p>What do you do?</p>
+	<form th:action="@{/end}">
+		<input type="submit" value="Run back to the Town" />
+	</form>
+	<br>
+	<form th:action="@{/end}">
+		<input type="submit"
+			value="Run away from both the Town and the Conjurations" />
+	</form>
+	<br>
+	<form th:action="@{/end}">
+		<input type="submit" value="Throw snow at the conjurations" />
+	</form>
+	<br>
+	<form th:action="@{/save/ginvestigatesmoke}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

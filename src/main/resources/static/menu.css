@@ -19,9 +19,20 @@ input[type="submit"] {
 	margin-bottom: 40px;
 }
 
+input[type=submit]:active {
+	display: inline;
+	background-color: white;
+	margin-bottom: 5px;
+	padding: 20px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: garamond;
+	font-variant: small-caps;
+}
+
 input[type="submit"]:hover {
 	display: inline;
-	background-color: #e6e3e3;
+	background-color: #d4d2d2;
 	margin-bottom: 5px;
 	padding: 20px 30px;
 	font-size: 20px;

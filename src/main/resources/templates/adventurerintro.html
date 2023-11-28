@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Adventurer Introduction</h1>
+	<p>
+		You've always loved being an adventurer, a free spirit. You've gone to
+		lands close and far, though, as of recent, you found a new calling -
+		the sea. <br> For one reason or another, the crashing of waves,
+		the promise of distant lands it calls to you like a sirens song.
+	</p>
+	<br>
+	<p>
+		You decided to quench this thirst and traveled to Arovorth - a coastal
+		city in the Dyrsthrom Empire. <br> You've been here before, once
+		or twice, though, it was mostly just as a stop on a bigger journey. <br>
+		People here tend to be a bit suspicious of outsider<span
+			th:if="${character.get().getRace().getName() eq 'Orc'}">,
+			especially towards Orcs,</span> so you never had the need to stay longer
+		than required, today being no exception.
+	</p>
+	<br>
+	<p>
+		Upon coming to the harbor, you notice two available ships. <br>
+		One - a small fishing boat and the other a trading ship. <br>
+		While the fishing boat would be a lot cheaper, it'd also be less safe.
+		<br> The trading ship, however, would be more expensive, but
+		you'd have the protection of the merchants and their guards on board.
+	</p>
+	<p>Which do you choose?</p>
+	<form th:action="@{/afishingboat}">
+		<input type="submit" value="The Fishing Boat" />
+	</form>
+	<br>
+	<form th:action="@{/atradingship}">
+		<input type="submit" value="The Trading Ship" />
+	</form>
+	<br>
+	<form th:action="@{/save/introduction}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</body>
+</html>

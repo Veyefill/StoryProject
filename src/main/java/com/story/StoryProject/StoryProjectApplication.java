@@ -36,7 +36,6 @@ public class StoryProjectApplication {
 		return (args) -> {
 
 			// Backgrounds
-			Background b0 = new Background("Default", "The default preset.");
 			Background b1 = new Background("Prisoner",
 					"You're a prisoner in the infamous Ravenrock prison. You've been here so long you don't even know what you did, but now's the time to escape.");
 			Background b2 = new Background("Guard",
@@ -44,73 +43,63 @@ public class StoryProjectApplication {
 			Background b3 = new Background("Adventurer",
 					"You don't have a constant place of residence- you wander from kingdom to kingdom, from land to land, seeking adventure.");
 
-			backgroundRepository.save(b0);
 			backgroundRepository.save(b1);
 			backgroundRepository.save(b2);
 			backgroundRepository.save(b3);
 
 			// EyeColor
-			EyeColor e0 = new EyeColor("Default");
 			EyeColor e1 = new EyeColor("Blue");
 			EyeColor e2 = new EyeColor("Green");
 			EyeColor e3 = new EyeColor("Brown");
 
-			eyeColorRepository.save(e0);
 			eyeColorRepository.save(e1);
 			eyeColorRepository.save(e2);
 			eyeColorRepository.save(e3);
 
 			// GenderExpression
-			GenderExpression g0 = new GenderExpression("Default");
-			GenderExpression g1 = new GenderExpression("Feminine");
-			GenderExpression g2 = new GenderExpression("Masculine");
-			GenderExpression g3 = new GenderExpression("Androgynous");
+			GenderExpression g1 = new GenderExpression("Androgynous");
+			GenderExpression g2 = new GenderExpression("Feminine");
+			GenderExpression g3 = new GenderExpression("Masculine");
 
-			genderExpressionRepository.save(g0);
 			genderExpressionRepository.save(g1);
 			genderExpressionRepository.save(g2);
 			genderExpressionRepository.save(g3);
 
 			// Hair Color
-			HairColor h0 = new HairColor("Default");
 			HairColor h1 = new HairColor("Brown");
 			HairColor h2 = new HairColor("Blonde");
 			HairColor h3 = new HairColor("Black");
 
-			hairColorRepository.save(h0);
+
 			hairColorRepository.save(h1);
 			hairColorRepository.save(h2);
 			hairColorRepository.save(h3);
 
 			// Pronouns
-			Pronouns p0 = new Pronouns("Default");
-			Pronouns p1 = new Pronouns("He/Him");
-			Pronouns p2 = new Pronouns("She/Her");
-			Pronouns p3 = new Pronouns("They/Them");
+			Pronouns p1 = new Pronouns("They/Them");
+			Pronouns p2 = new Pronouns("He/Him");
+			Pronouns p3 = new Pronouns("She/Her");
 
-			pronounsRepository.save(p0);
 			pronounsRepository.save(p1);
 			pronounsRepository.save(p2);
 			pronounsRepository.save(p3);
 
 			// Races
-			Race r0 = new Race("Default", "The default preset.");
-			Race r1 = new Race("Orc",
+			Race r1 = new Race("Human", "Normal humans.");
+			Race r2 = new Race("Orc",
 					"Incredibly tall, brutish humanoid creatures. Most are incredibly tall and strong.");
-			Race r2 = new Race("Human", "Normal humans.");
 			Race r3 = new Race("Elf",
 					"Tall humanoids with pointed ears. They have a natural predisposition for being magic wielders.");
 
-			raceRepository.save(r0);
 			raceRepository.save(r1);
 			raceRepository.save(r2);
 			raceRepository.save(r3);
 
 			// Test login data
 			
-			ProgramUser u0 = new ProgramUser("test", "$2y$10$PMgNMSXQjWiZR9FPGbsvXOmfuKuqjtZ760F/NEhGM70vvUs/G5md2", "test@gmail.com", "player");
-			ProgramUser u1 = new ProgramUser("admin", "$2y$10$pFRGcwvF3x6fBmgvp2922eAkdVs7MKZNo4/25GkvxvDDoAGe0pL3S", "admin@gmail.com", "admin");
-			ProgramUser u2 = new ProgramUser("cowner", "$2y$10$tuDTZAeP8OpvbJsn2pYXUOvI6rh4rv9Mh2x/6HHagDXgB8Sn6.Ure", "cowner@gmail.com", "player");
+			ProgramUser u0 = new ProgramUser("test", "$2y$10$PMgNMSXQjWiZR9FPGbsvXOmfuKuqjtZ760F/NEhGM70vvUs/G5md2", "test@gmail.com", "USER");
+			ProgramUser u1 = new ProgramUser("admin", "$2y$10$pFRGcwvF3x6fBmgvp2922eAkdVs7MKZNo4/25GkvxvDDoAGe0pL3S", "admin@gmail.com", "ADMIN");
+			ProgramUser u2 = new ProgramUser("cowner", "$2y$10$tuDTZAeP8OpvbJsn2pYXUOvI6rh4rv9Mh2x/6HHagDXgB8Sn6.Ure", "cowner@gmail.com", "USER");
 			
 			programUserRepository.save(u0);
 			programUserRepository.save(u1);

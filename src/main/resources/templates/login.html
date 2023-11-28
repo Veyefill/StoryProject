@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<link rel="stylesheet" type="text/css" th:href="@{/menu.css}" />
 <head>
 <title>Land of Dead Gods - Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 	<h1>Login</h1>
+	<p>As Land of Dead Gods is still in Early Access, it's only available to select people. Please login to proceed.</p>
 	<div th:if="${param.error}">
 		<strong>Invalid username and password.</strong>
 	</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>The Trading Ship</h1>
+	<p>
+		Deciding to splurge a bit, you walk towards the merchant ship, you
+		notice a board bridging the gap between the ship and the dock<br>
+		Right next to it- a record-taker. As you walk up, he asks for your
+		name. "<span th:text="${character.get().getFirstName}"></span> <span
+			th:text="${character.get().getLastName}"></span>" You tell him. <br>
+	</p>
+	<p>You pay your travel fee and decide to relax on the ship, having
+		nothing else to wait but wait for your arrival.</p>
+	<p>What do you do?</p>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Go fishing to see if you can catch anything" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Go to the dinner hall and get your free complimentary meal" />
+	</form>
+	<br>
+	<form th:action="@{/end}" method="get">
+		<input type="submit"
+			value="Go bother the captain with your irresistable charm" />
+	</form>
+	<br>
+	<form th:action="@{/save/atradingship}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

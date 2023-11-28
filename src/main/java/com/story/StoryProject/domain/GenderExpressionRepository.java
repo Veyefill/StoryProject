@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GenderExpressionRepository extends CrudRepository<GenderExpression, Long> {
-	List<GenderExpression> findByGendexp (String gendexp);
+	List<GenderExpression> findByGenderExpression (String genderExpression);
 }

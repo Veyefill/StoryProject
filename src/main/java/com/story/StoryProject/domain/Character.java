@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,13 +14,14 @@ public class Character {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	private String firstName;
 	private String lastName;
 	private int age; // From 19 to 59
-	
-    @OneToOne
-    @JoinColumn(name = "user_id", unique = true)
-    private ProgramUser programUser;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id", unique = true)
+	private ProgramUser programUser;
 
 	@ManyToOne
 	@JoinColumn(name = "race_id")
@@ -32,16 +32,16 @@ public class Character {
 	private Pronouns pronouns;
 
 	@ManyToOne
-	@JoinColumn(name = "genderexpression_id")
-	private GenderExpression gendexp; // Gender expression
+	@JoinColumn(name = "genderExpression_id")
+	private GenderExpression genderExpression; // Gender expression
 
 	@ManyToOne
 	@JoinColumn(name = "haircolor_id")
-	private HairColor haircol; // Hair color
+	private HairColor hairColor; // Hair color
 
 	@ManyToOne
 	@JoinColumn(name = "eyecolor_id")
-	private EyeColor eyecol; // Eye color
+	private EyeColor eyeColor; // Eye color
 
 	private int height; // Height has a set range depending on race
 
@@ -49,19 +49,21 @@ public class Character {
 	@JoinColumn(name = "background_id")
 	private Background background;
 
+	private String progress;
+
 	public Character() {
 	}
 
-	public Character(String firstName, String lastName, int age, Race race, Pronouns pronouns, GenderExpression gendexp,
-			HairColor haircol, EyeColor eyecol, int height, Background background) {
+	public Character(String firstName, String lastName, int age, Race race, Pronouns pronouns, GenderExpression genderExpression,
+			HairColor hairColor, EyeColor eyeColor, int height, Background background) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.race = race;
 		this.pronouns = pronouns;
-		this.gendexp = gendexp;
-		this.haircol = haircol;
-		this.eyecol = eyecol;
+		this.genderExpression = genderExpression;
+		this.hairColor = hairColor;
+		this.eyeColor = eyeColor;
 		this.height = height;
 		this.background = background;
 	}
@@ -121,30 +123,30 @@ public class Character {
 	}
 
 	// Gender Expression
-	public GenderExpression getGendexp() {
-		return gendexp;
+	public GenderExpression getGenderExpression() {
+		return genderExpression;
 	}
 
-	public void setGendexp(GenderExpression gendexp) {
-		this.gendexp = gendexp;
+	public void setGenderExpression(GenderExpression genderExpression) {
+		this.genderExpression = genderExpression;
 	}
 
 	// Hair Color
-	public HairColor getHaircol() {
-		return haircol;
+	public HairColor getHairColor() {
+		return hairColor;
 	}
 
-	public void setHaircol(HairColor haircol) {
-		this.haircol = haircol;
+	public void setHairColor(HairColor hairColor) {
+		this.hairColor = hairColor;
 	}
 
 	// Eye Color
-	public EyeColor getEyecol() {
-		return eyecol;
+	public EyeColor getEyeColor() {
+		return eyeColor;
 	}
 
-	public void setEyecol(EyeColor eyecol) {
-		this.eyecol = eyecol;
+	public void setEyeColor(EyeColor eyeColor) {
+		this.eyeColor = eyeColor;
 	}
 
 	// Height
@@ -160,18 +162,27 @@ public class Character {
 	public Background getBackground() {
 		return background;
 	}
-	
+
 	public void setBackground(Background background) {
 		this.background = background;
 	}
-	
-	//User
+
+	// User
 	public ProgramUser getProgramUser() {
 		return programUser;
 	}
-	
+
 	public void setProgramUser(ProgramUser programUser) {
 		this.programUser = programUser;
 	}
-	
+
+	// Progress
+	public String getProgress() {
+		return progress;
+	}
+
+	public void setProgress(String progress) {
+		this.progress = progress;
+	}
+
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Prisoner Introduction</h1>
+<body>
+	<p>
+		You awaken to find yourself in a jail cell. The cell is made of stone
+		brick, with your only source of light coming from beyond the bars of
+		the cell <br> You've been here so long that you don't even
+		remember what crime you committed to get locked up in here. <br>
+		Though, you do know that you've been here long enough to come up with
+		an escape plan <br>
+	</p>
+	<p>
+		During last weeks dinner, you managed to get a makeshift lockpick from
+		one of the prisoners by using your hard-earned favors.<br> You
+		also managed to get a metal bar that you hid underneath your bed.
+	</p>
+	<p>How do you want to escape?</p>
+	<form th:action="@{/pcelllockpick}">
+		<input type="submit" value="Use the lockpick" />
+	</form>
+	<br>
+	<form th:action="@{/pcellmetalbar}">
+		<input type="submit" value="Use the metal bar" />
+	</form>
+	<br>
+	<form th:action="@{/save/introduction}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>

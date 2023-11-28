@@ -18,7 +18,7 @@ public class EyeColor {
 	private Long id;
 	private String color;
 	
-	@OneToMany(mappedBy = "eyecol", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "eyeColor", cascade = CascadeType.ALL)
 	private List<Character> characters;
 	
 	public EyeColor () {

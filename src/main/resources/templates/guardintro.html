@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+	<link rel="stylesheet" type="text/css" th:href="@{/story.css}" />
+<head>
+<title>Land of Dead Gods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Guard Introduction</h1>
+<body>
+	<p>You guard the village of Orswen from the outer wilds and various
+		bandits. Being on the edge of the Kingdom, it's very vulnerable to
+		various bandits. You're stationed at the front gate, a long with a few
+		other guards, all of you doing your best to protect your own.</p>
+	<br>
+	<p>Most days at Orswen were incredibly calm, though, today was not
+		one of those days. In the distance, you see a rising pillar of black
+		smoke. Black smoke, in these parts, usually indicates an incoming
+		bandit warband.</p>
+	<p>What do you do?</p>
+	<form th:action="@{/ginvestigatesmoke}">
+		<input type="submit" value="Investigate the Smoke" />
+	</form>
+	<form th:action="@{/grallyguards}">
+		<input type="submit" value="Rally the Guards" />
+	</form>
+	<br>
+	<form th:action="@{/save/introduction}" method="post">
+		<input type="submit" value="Save Progress" />
+	</form>
+	<br>
+	<form th:action="@{/menu}" method="get">
+		<input type="submit" value="Main Menu" />
+	</form>
+</body>
+</html>
