@@ -3,7 +3,7 @@
 input[type="submit"]:active {
 	display: inline;
 	background-color: #c7c5c5;
-	width: 200px;
+	width: 300px;
 	height: 40px;
 	margin-bottom: 5px;
 	font-size: 20px;
@@ -27,7 +27,7 @@ p{
 input[type="submit"]:hover {
 	display: inline;
 	background-color: #c7c5c5;
-	width: 200px;
+	width: 400px;
 	height: 40px;
 	margin-bottom: 5px;
 	font-size: 20px;
@@ -39,7 +39,7 @@ input[type="submit"]:hover {
 input[type="submit"] {
 	display: inline;
 	background-color: #c7c5c5;
-	width: 200px;
+	width: 450px;
 	height: 40px;
 	margin-bottom: 5px;
 	font-size: 20px;
